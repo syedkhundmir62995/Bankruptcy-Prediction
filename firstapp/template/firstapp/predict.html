@@ -4,9 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/firstapp/predict.css">
     <title>Predict</title>
 </head>
 <body>
-    <h1>Predict Page</h1>
+    
+    
+    {% extends 'firstapp/main.html' %}
+    {% block content %}
+    
+    <div class="form-container"">
+        <form action="{% url 'predictpage' %}" method="post" class= "form-content">
+            {% csrf_token %}
+            <h3 class = "login-head">FILL THE GIVEN FIELDS TO DETERMINE BANKRUPTCY</h3>
+            
+            <hr>
+
+            <label for="stl">Short-Term Liabilities per Total Assets</label> 
+            <input type="text" name="stl" class="input-fields" required>
+
+            <label for="lta">Logarithm of Total Assets</label> 
+            <input type="text" name="lta" class="input-fields" required>
+
+            <label for="si">Sales per Inventory</label>
+             <input type="text" name="si" class="input-fields" required>
+
+            <label for="tatl">Total Assets per Total Liabilities</label> 
+            <input type="text" name="tatl" class="input-fields" required>
+
+            <label for="clcps">Current Liabilities per Cost of Products Sold</label> 
+            <input type="text" name="clcps" class="input-fields" required>
+
+            <label for="icps">Inventory per Cost of Products Sold</label>
+             <input type="text" name="icps" class="input-fields" required>
+
+            <label for="is">Inventory per Sales</label> 
+            <input type="text" name="is" class="input-fields" required>
+
+
+            <label for="catl">Current Assets per Total Liabilities</label>
+             <input type="text" name="catl" class="input-fields" required>
+
+             <label for="sta">Sales per Total Assets</label>
+             <input type="text" name="sta" class="input-fields" required>
+
+            <label for="castl">Current Assets per Short-term Liabilities</label>
+             <input type="text" name="castl" class="input-fields" required>
+
+            <label for="tsta">Total Sales per Total Assets</label> 
+            <input type="text" name="tsta" class="input-fields" required>
+
+            <label for="stlcps">Short-Term Liabilities per Cost of Products Sold</label>
+             <input type="text" name="stlcps" class="input-fields" required>
+
+            <label for="tcts">Total Costs per Total Sales</label>
+             <input type="text" name="tcts" class="input-fields" required>
+
+
+            <label for="caill">Current Assets - Inventory per Long-term Liabilities</label>
+             <input type="text" name="caill" class="input-fields" required>
+
+            <label for="wc">Working Capital</label>
+             <input type="text" name="wc" class="input-fields" required>
+
+            
+
+            <input type="submit" value="PREDICT" class = 'submit-btn'>
+        
+        </form>
+    </div>
+    {% endblock content %}
 </body>
 </html>

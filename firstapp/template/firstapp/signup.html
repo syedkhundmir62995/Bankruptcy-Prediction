@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/firstapp/signup.css">
     <title>Signup</title>
 </head>
 <body>
-    <h1>Signup Page</h1>
+    
+    {% extends 'firstapp/main.html' %}
+    
+   
+   
+
+    {% block content %}
+
+    
+
+
+    <div class="form-container">
+        <form action="{% url 'signuppage' %}" method="post" class= "form-content">
+            {% csrf_token %}
+            <h3 id = "signup-head">SIGN UP</h3>
+            <hr>
+            <label for="fname">First Name</label>
+            <input type="text" name = "fname" placeholder="First Name" id="fname" class="input-fields">
+
+            <label for="lname">Last Name</label>
+            <input type="text" name = "lname" placeholder="Last Name" id="lname" class="input-fields">
+        
+            <label for="mail">Email</label>
+            <input type="email" name = "mail" placeholder="Email" id="mail" class="input-fields">
+
+            <label for="uname">User Name</label>
+            <input type="text" name = "uname" placeholder="User Name" id="uname" class="input-fields">
+
+            <label for="pass1">Password</label>
+            <input type="password" name = "pass1" placeholder="Password" id="password1" class="input-fields">
+
+            <label for="pass2">Confirm Password</label>
+            <input type="password" name = "pass2" placeholder="Confirm Password" id="password2" class="input-fields"><br>
+
+            <input type="submit" value="Submit" class = 'submit-btn'>
+        </form>
+    </div>
+    {% endblock content %}
 </body>
 </html>

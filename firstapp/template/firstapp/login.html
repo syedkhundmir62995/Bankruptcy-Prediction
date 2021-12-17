@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/firstapp/login.css">
     <title>Login</title>
 </head>
 <body>
-    <h1>Login Page</h1>
+    {% extends 'firstapp/main.html' %}
+
+    {% block content %}
+    
+    <div class="form-container">
+        <form action="{% url 'loginpage' %}" method="post" class= "form-content">
+            {% csrf_token %}
+
+            <h3 class = "login-head">WELCOME BACK</h3>
+            <h3 class = "login-head">LOGIN</h3>
+            <hr>
+
+            <label for="uname">User Name</label>
+            <input type="text" name = "uname" placeholder="User Name" id="uname" class="input-fields">
+
+            <label for="pass1">Password</label>
+            <input type="password" name = "pass1" placeholder="Password" id="password1" class="input-fields">
+
+
+            <input type="submit" value="SIGN IN" class = 'submit-btn'>
+            <br>
+            <span>Don't have an account? <a href="{% url 'signuppage' %}">Sign Up Now</a></span>
+        </form>
+    </div>
+
+    {% endblock content %}
+    
 </body>
 </html>
