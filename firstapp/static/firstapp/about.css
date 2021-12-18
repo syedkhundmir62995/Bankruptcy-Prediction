@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container1{
+    height: 400px;
+    width: 1200px;
+    /* background-color: khaki; */
+    margin: 20px auto;
+}
+
+h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(114, 121, 118);
+    padding-bottom: 12px;
+    padding-left: 5px;
+}
+
+
+.content1{
+    display: inline-block;
+    width: 500px;
+    height: 300px;
+    position: fixed;
+    background-color: rgb(239, 240, 240);
+    margin: 20px 50px;
+    padding: 30px 40px;
+    letter-spacing: 0.6px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    transition: background-color 1s;
+}
+
+.content1:hover{
+    background-color: rgb(238, 238, 217);
+}
+
+h2{
+    padding: 10px 10px;
+    color: rgb(194, 68, 68);
+}
+
+p{
+    font-size: 16px;
+    line-height: 22px;
+    color: rgb(141, 93, 46);
+}
+
+.picture1{
+    display: inline-block;
+    width: 500px;
+    height: 580px;
+    background-image: url(../firstapp/img/teamwork.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 680px;
+    margin-top: 30px;
+    border-radius: 5px;
+
+}
